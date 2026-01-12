@@ -58,3 +58,46 @@ for region in region_list :
 
 
 print(gyeonggi_list)
+
+
+original_prices = [800, 1200, 950, 1100]
+discounted_prices = []
+
+for price in original_prices:
+    if price >= 1000:
+        discounted_prices.append(int(price*0.9))
+    else:
+        discounted_prices.append(price)
+
+print(original_prices)
+
+print(discounted_prices)
+
+
+original_prices = [1000,1400,1150,1300]
+
+discounted_prices = [
+    int(price*0.9) if price >= 1000 else price
+for price in original_prices
+]
+
+print(original_prices)
+
+print(discounted_prices)
+
+
+
+my_list = [5,2,3,1,4]
+my_list.sort()
+
+print(my_list)
+
+
+my_list = [5,2,3,1,4]
+sort_list = my_list.sort()
+
+print(my_list)
+
+print(sort_list)
+
+
