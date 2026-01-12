@@ -76,3 +76,15 @@ while i >0:
 print('종료')
 
 
+number = 1
+
+while True:
+   print('Good Day!!') 
+   
+    if number > = 5 :
+        break
+
+    number = number+1
+
+print(number)
+
