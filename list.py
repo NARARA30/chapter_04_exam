@@ -101,3 +101,63 @@ print(my_list)
 print(sort_list)
 
 
+my_list = [5,2,3,1,4]
+sort_list = sorted(my_list)
+
+print(my_list)
+
+print(sort_list)
+
+
+a = "Hello"
+b = ['e','l','i','c','e']
+
+print(a[1])
+
+print(b[2:4])
+
+print(a[-1])
+
+print(b[:4])
+
+print(b[2:])
+
+
+a = "Hello"
+b = ['e','l','i','c','e']
+
+print('e' in a)
+
+print('E' in b)
+
+
+
+a = "Hello World"
+b = ['e','l','i','c','e']
+
+print(len(a))
+
+print(len(b))
+
+c = 'Good' + 'Day'
+print(c)
+
+d = ['H','e'] + ['l','l','o']
+print(d)
+
+
+e = 'Go!!'*5
+print(e)
+
+f = [13,17,19*3]
+print(f)
+
+g = [13,17,19] * 3
+print(g)
+
+
+my_seq = [2,2,2,4,4]
+print(my_seq.count(2))
+
+my_str = 'elice and alice'
+print(my_str.count('e'))
