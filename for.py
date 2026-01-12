@@ -67,24 +67,31 @@ while i < 5:
 print(sum)
 
 
-i=1
+#i=1
 
-while i >0:
-    print(i)
-    i=i+1
+#while i >0:
+#    print(i)
+#    i=i+1
 
-print('종료')
+#print('종료')
 
 
 number = 1
 
-while True:
-   print('Good Day!!') 
-   
-    if number > = 5 :
+while True : 
+    print('Good Day!!')
+
+    if number >= 5 :
         break
 
-    number = number+1
+    number = number + 1
 
 print(number)
 
+
+for number in range(1,11) :
+
+    if number % 2 != 0 :
+        continue
+
+    print(number)
