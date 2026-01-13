@@ -17,7 +17,7 @@ print(3==4 or 4<=5 or 6<2)
 #논리값을 뒤집음(True - False)
 print(not 3==4)
 
-#if 문
+#if / else/ elif 문 
 i=1
 
 if i == 1:
