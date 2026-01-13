@@ -6,7 +6,7 @@ print(False)
 print(3 < 5)
 print(7 == 5)
 print(2 >= 10)
-print(5! =10)
+
 
 # 각 논리가 모두 True여야 True
 print(3==3 and 4<=5 and 6>2)
