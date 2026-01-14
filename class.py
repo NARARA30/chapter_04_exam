@@ -145,3 +145,59 @@ user1 = User(2000)
 user2 = User(2006)
 
 
+# 상속이 필요한 이유
+# 여러 클래스가 비슷한 속성과 메소드를 공유해야 할 때
+# 서로 다른 클래스 간의 계층 구조가 확실할 때
+
+
+# (일반) 게시글
+
+class Post :
+    def __init__ (self, content):
+        self.content = content
+
+
+
+# 이미지가 있는 게시글
+
+class ImagePost : 
+    def __init__ (self, content, images) :
+        self.content = content
+        self.images = images
+
+    def num-images(self) :
+        return len(self,images)
+
+
+
+# 클래스 상속
+## 부모(부모의 속성, 메소드), 자식(부모의 속성, 메소드+ 자식의 속성, 메소드)
+
+class Post : 
+    def __init__ (self, content) :
+        self.content = content
+
+
+class ImagePost (Post) :
+    def __init__ (self, content, images) :
+        super().__init__(content)
+        self.images = images
+
+
+class Post :
+    def __init__ (self, content) :
+        self.content = content
+
+class ImagePost (Post) : 
+    def __init__ (self, content, images) :
+        super().__init__(content)
+        self.images = images
+
+image_post = ImagePost(
+    'Let's Coding!!!', 'home/elice/image.png'
+)
+
+print(image_post.content)
+print(image_post.images)
+
+
