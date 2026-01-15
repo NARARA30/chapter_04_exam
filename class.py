@@ -201,3 +201,155 @@ print(image_post.content)
 print(image_post.images)
 
 
+#속성 상속
+## 자식 클래스가 부모 클래스에 정의한 인스턴스 변수(속성)를 물려받아 사용할 수 있는 것
+class Post : 
+    def __init__ (self, content) :
+        self.content = Content
+        self.likers = []
+
+
+## imagePost는 Post를 상속 받고 있음
+## imagePost 객체를 생성할 때, 부모 생성자가 호출됨
+### > 부모 클래스에서 정의할 self.cintent, self.likers가 my_post에 생성됨
+class ImagePost(Post) :
+    def __init__(self, content, images):
+        super().__init__(content)
+        self.images = images
+
+my_post = ImagepOST(
+    'elice 근처 맛집!!',
+    'home/elice/image.png'
+)
+
+print(my_post.likers)
+
+
+#속성 상속
+## imagePost 안네 __init__ 생성자를 따로 정의하지 않았기 때문에, 자동으로 부모 클래스의 __init__ 이 호출
+## my_post 를 만들 때, content 속성을 생성하고 likers 속성도 빈 리스트로 초기화
+
+class Post : 
+    def __init__ (self, content) :
+        self.content = content
+        self.likers = []
+
+class ImagePost(Post) :
+    pass
+    
+my_post = ImagePost('elice 근처 맛집!!')
+
+print(my_post.likers)
+
+
+## 자식 클래스에 __init__을 새로 정의하고 super()를 호출하지 않으면, 부모 속성은 초기화되지 않음
+## 자식 클래스에서 부모 속성을 쓰고 싶다면 super().__init__()로 부모 생성자를 호출해야 함
+
+class Post :
+    def __init__ (self, content) :
+        self.content = content
+        self.likers = []
+
+class ImagePost(Post) :
+    def __init__(self, content, immages) :
+        self.images = images
+
+my_post = ImagePost(
+    'elice 근처 맛집!!',
+    'home/elice/image.png'
+)
+
+print(my_post.likers)
+
+
+#메소드 상속
+## 자식 클래스가 부모 클래스에서 정의된 메서드를 별도로 다시 작성하지 않고도 사용할 수 있게 하는 기능
+
+class Post : 
+    def __init__ (self. content)
+        self.content = content
+        self.likers = []
+
+    def like (self, user) :
+        self.likers.appenf(user)
+
+
+## imagePost는 Post를 상속받고 있음
+## imagePost에는 like() 메소드가 정의되어 있지 않음
+## Post에서 정의된 like() 메소드를 자동으로 물려받음
+## 자식 클래스는 부모의 기능을 그대로 사용함으로써 코드 중복을 줄이고 유지보수를 쉽게 만듦
+
+class ImagePost(Post) :
+    def __init__(self, content, images) :
+        super().__init__(content)
+        self.images = images
+
+my_post = ImagePost(
+    'elice 근처 맛집!!',
+    'home/elice/image.png'
+)
+
+my_post.like('Bob')
+
+print(my_post.likers)
+
+#좋아요. 슬퍼요
+class Like : 
+    def __init__ (self, post, user) :
+        self.post = post
+        self.user = user
+
+class Sad :
+    def __init__ (self, post, user) :
+        self.post = post
+        self.user = user
+
+
+#추상적인 부모 클래스
+## 코드 중복 제거 : 자식 클래스마다 post,user 속성을 따로 작성하지 않아도 됨
+## 구조 통일 : 모든 자식 클래스는 type, post, user을 가짐
+## 확장 용이 : 새로운 반응(e.g.Angry등)을 추가할 때 부모 로직 재사용 가능
+# 유지보수 편리 : 공통 로직을 한 곳(부모)에만 수정하면 됨
+
+class Reaction : 
+    def __init__ (self, _type, post, user)
+        self.type = _type
+        self. post = post
+        self.user = user
+
+#좋아요
+class Like (reaction) :
+    def __init__ (self, post, user)
+        super().__init__('LIKE', post, user)
+
+#싫어요
+class Sad (Reaction) :
+    def __init__ (self, post, user) :
+        super().__init__('SAD', post, user)
+
+
+# 이렇게 쓰진 않는다.
+# 추상적인 부모 클래스는 직접 인스턴스화하지 않음
+reaction = Reaction('vsadjkl', post, me)
+
+#반드시 구체적인 자식 클래스로 쓴다.
+like = Like(post, me)
+
+
+#오버라이딩
+
+class Post : 
+    def __init__(self, content) : 
+        self.content = content
+        self.comments = {}
+
+    def comment (self, user, comment) :
+        self.comments[user] = comment
+
+normal_post = Post('오공완(오늘도 공부 완료)!!!')
+
+normal_post.comment('Sam', '너무 멋지다!!')
+normal_post.comment('Queen', '나도 질 수 없지')
+
+print(normal_post.comments)
+
