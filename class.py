@@ -353,3 +353,105 @@ normal_post.comment('Queen', '나도 질 수 없지')
 
 print(normal_post.comments)
 
+
+# Post 클래스에는 원래 댓글을 저장하는 comment() 메서드가 존재
+# ProtectedPost는 comment()를 오버라이딩(덮어쓰기)해서 댓글을 저장하지 않고 안내 메시지를 출력하도록 동작을 변경
+# 같은 메서드 이름이지만 객체의 종류에 따라 결과가 달라짐
+
+class ProtectedPost (Post) : 
+    def comment (self, user, content) :
+        print('who can reply? People the author mentioned can reply')
+
+protected_post = ProtectedPost('보호된 게시물')
+
+protected_post.comment('jojo','OH!! NO!!')
+
+print(portected_post.comment)
+
+
+# 모듈 불러오기
+import string
+
+print(string.digits)
+
+from string import digits
+
+print(string)
+
+
+# 모든 코드는 모듈이다.
+# 모듈이란 : 다른 코드에서 사용할 수 있도록 열어 놓은 코드
+#posts.py
+class Post :
+
+class ImagePost(Post) :
+
+#timeline.py
+from posts import Post, ImagePost
+
+timeline.add(Post('hello!'))
+timeline.add(ImagePost('#food', []))
+
+#패키지란? 모듈을 모아 놓은 폴더
+#SNS / posts.py / users.py / media.py / ads.py
+
+#패키지 안의 모듈
+import SNS.users
+from SNS import media
+from SNS.posts import Post, ImagePost
+
+
+#matplotlib
+import matplotlib.pyplot as plt
+
+x = [0,1,2,3,4]
+y = [3,5,8,2,5]
+
+plt.bar(x, y, align='center')
+plt.show()
+
+
+#bar
+import matplotlib.pyplot as plt
+
+plt.bar(위치, 높이)
+plt.show()
+
+import matplotlib.pyplot as plt
+
+x = range(5)
+y = [5,4,3,2,1]
+
+plt.bar(x, y)
+plt.show()
+
+
+#xticks() : x축 눈금 위치와 라벨(표시되는 값)을 설정하는 함수
+import matplotlib.pyplot as plt
+
+pos = range(4)
+years = [2015, 2016, 2017, 2018]
+temp = [17, 16, 19, 22]
+
+plt.bar(pos, temp)
+plt.xticks(pos, years)
+
+#
+import metplotlib.pylot as plt
+
+pos = range(4)
+years = [2015, 2016, 2017, 2018]
+temp = [17, 16, 19, 22]
+
+plt.par(pos, temp)
+
+
+#
+import metplotlib.pylot as plt
+
+pos = range(4)
+years = [2015, 2016, 2017, 2018]
+temp = [17, 16, 19, 22]
+
+plt.par(pos, temp)
+plt.xticks(pos, years)
